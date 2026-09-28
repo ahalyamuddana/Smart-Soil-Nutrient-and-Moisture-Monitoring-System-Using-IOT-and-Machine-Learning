@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart soil nutrient and moisture monitoring system using Iot and machine learning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+
+<!-- Chart -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="logo">
+    <img src="assets/logo.jpg">
+    <div>
+      <h1>SmartSoil analysis</h1>
+      <p>Auto Fertigation System</p>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <button onclick="navigate('home')">Home</button>
+    <button onclick="navigate('dashboard')">Dashboard</button>
+    <button onclick="navigate('analytics')">ML Analytics</button>
+   <!-- <button onclick="navigate('automation')">Automation</button> -->
+    <button onclick="navigate('iotPage')">IoT Connectivity</button>
+    <button onclick="navigate('reports')">Reports</button>
+  </nav>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="page active">
+
+  <section class="hero">
+    <img src="assets/hero.jpg">
+    <div class="hero-overlay">
+      <h2>Smart soil nutrient and moisture monitoring system using Iot and machine learning</h2>
+      <p>Real-time sensing • Machine Learning</p>
+
+      <div class="hero-buttons">
+        <button class="primary" onclick="navigate('dashboard')">View Live Dashboard</button>
+        <button class="secondary" onclick="navigate('analytics')">See ML Predictions</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+
+    <div class="feature-card" onclick="navigate('dashboard')">
+      🌡 Real-Time Sensors
+    </div>
+
+    <div class="feature-card" onclick="navigate('iotPage')">
+      📡 IoT Connectivity
+    </div>
+
+    <div class="feature-card" onclick="navigate('analytics')">
+      🤖 Machine Learning
+    </div>
+
+    <!--<div class="feature-card" onclick="navigate('automation')">
+      💧 Auto Fertigation
+    </div>-->
+
+    <div class="feature-card" onclick="navigate('reports')">
+      ☁ Cloud Platform
+    </div>
+
+  </section>
+
+</section>
+
+<!-- ================= DASHBOARD ================= -->
+<section id="dashboard" class="page">
+
+<h2 class="page-title">Live Dashboard</h2>
+
+<div class="metric-grid">
+  <div class="metric blue">Nitrogen <span id="nValue">0</span> ppm</div>
+  <div class="metric purple">Phosphorus <span id="pValue">0</span> ppm</div>
+  <div class="metric orange">Potassium <span id="kValue">0</span> ppm</div>
+  <div class="metric cyan">Moisture <span id="mValue">0</span> %</div>
+</div>
+
+<div class="chart-grid">
+  <canvas id="npkChart"></canvas>
+  <canvas id="moistureChart"></canvas>
+</div>
+
+<div class="panel">
+  <h3>ML Analysis</h3>
+  <p id="analysis">Waiting...</p>
+</div>
+
+<!-- Added crop recommendation display -->
+<div class="panel">
+  <h3>Recommended Crop</h3>
+  <p id="cropPrediction">Waiting...</p>
+</div>
+
+</section>
+
+<!-- ================= ANALYTICS ================= -->
+<section id="analytics" class="page">
+
+  <h2 class="page-title">ML Analytics</h2>
+
+  <div class="analytics-grid">
+    <div class="analytics-card">Predicted Nitrogen <span id="predictedNitrogen">0</span></div>
+    <div class="analytics-card">Predicted Phosphorus <span id="predictedPhosphorus">0</span></div>
+    <div class="analytics-card">Predicted Potassium <span id="predictedPotassium">0</span></div>
+    <div class="analytics-card">Recommended Crop <span id="recommendedCrop">Waiting...</span></div>
+    <div class="analytics-card">1 Hour Recommendation <span id="hourlyCrop">Waiting...</span></div>
+    <div class="analytics-card">24 Hour Recommendation <span id="dailyCrop">Waiting...</span></div>
+    <div class="analytics-card">soilSuitability <span id="soilSuitability">Waiting...</span></div>
+  </div>
+
+</section>
+
+<!-- ================= AUTOMATION ================= -->
+<!--<section id="automation" class="page">
+
+  <h2 class="page-title">Automation Logic</h2>
+
+  <div class="rule-card">IF Nitrogen &lt; Threshold → Activate N Pump</div>
+  <div class="rule-card">IF Phosphorus &lt; Threshold → Activate P Pump</div>
+  <div class="rule-card">IF Potassium &lt; Threshold → Activate K Pump</div>
+  <div class="rule-card">IF Moisture &lt; Threshold → Activate Water Pump</div>
+
+</section>
+-->
+
+<!-- ================= IOT CONNECTIVITY ================= -->
+<section id="iotPage" class="page">
+
+  <h2 class="section-title">Component Specifications</h2>
+
+  <div class="component-grid">
+
+    <div class="component-card green">
+      <h3>🌱 Soil Sensors</h3>
+      <p>NPK sensors + Soil moisture sensor</p>
+      <ul>
+        <li>Nitrogen sensor (0–200 ppm)</li>
+        <li>Phosphorus sensor (0–100 ppm)</li>
+        <li>Potassium sensor (0–200 ppm)</li>
+        <li>Capacitive moisture sensor</li>
+      </ul>
+    </div>
+
+    <div class="component-card blue">
+      <h3>⚡ Arduino Microcontroller</h3>
+      <p>Data acquisition and preprocessing</p>
+      <ul>
+        <li>Reads analog sensor values</li>
+        <li>Converts to digital signals</li>
+        <li>Serial communication</li>
+        <li>Data preprocessing</li>
+      </ul>
+    </div>
+
+   <!--<div class="component-card purple">
+      <h3>📡 Bluetooth Module</h3>
+      <p>IoT connectivity and Dashboard communication</p>
+      <ul>
+        <li>bluetooth connectivity</li>
+        <li>HTTP protocol</li>
+        <li>Real-time data transmission</li>
+        <li>Bidirectional communication</li>
+      </ul>
+    </div>-->
+
+    <div class="component-card cyan">
+      <h3>☁ Cloud Platform</h3>
+      <p>Data storage and processing</p>
+      <ul>
+        <li>Database storage</li>
+        <li>API endpoints</li>
+        <li>Data aggregation</li>
+        <li>Historical analytics</li>
+      </ul>
+    </div>
+
+    <div class="component-card orange">
+      <h3>🧠 ML Model</h3>
+      <p>Prediction engine</p>
+      <ul>
+        <li>Deficiency prediction</li>
+        <li>Crop health scoring</li>
+        <li>Nutrient recommendation</li>
+      </ul>
+    </div>
+
+    <div class="component-card pink">
+      <h3>📊 Web Dashboard</h3>
+      <p>Visualization and control interface</p>
+      <ul>
+        <li>Live sensor data</li>
+        <li>Interactive charts</li>
+        <li>Alert notifications</li>
+        <li>Manual override controls</li>
+      </ul>
+    </div>
+
+    <!--<div class="component-card mint">
+      <h3>💧 Pump Controller</h3>
+      <p>Relay-based fertigation system</p>
+      <ul>
+        <li>4-channel relay module</li>
+        <li>N, P, K, Water pumps</li>
+        <li>Auto / Manual modes</li>
+        <li>Safety interlocks</li>
+      </ul>
+    </div>-->
+
+  </div>
+
+  <h2 class="section-title">System Architecture</h2>
+  <p class="subtitle">End-to-end IoT and AI-powered fertigation system design</p>
+
+  <div class="flow-container">
+
+    <div class="flow-row">
+      <div class="flow-box green">🌱 Soil Sensors</div>
+      <div class="arrow">→</div>
+      <div class="flow-box blue">⚡ Arduino</div>
+      <div class="arrow">→</div>
+      <div class="flow-box purple">📡 Bluetooth</div>
+      <div class="arrow">→</div>
+      <div class="flow-box cyan">☁ Cloud Platform</div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-box orange">🧠 ML Model</div>
+      <div class="arrow">→</div>
+      <div class="flow-box pink">📊 Web Dashboard</div>
+      <!--<>div class="arrow">→</div>
+      <div class="flow-box mint">💧 Pump Controller</div>-->
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= REPORTS ================= -->
+<section id="reports" class="page">
+
+<h2 class="page-title">Reports</h2>
+
+<div class="report-grid">
+
+<div class="report-card">
+<h3>Download Dataset</h3>
+<p>Download all sensor readings</p>
+
+<button onclick="downloadCSV()">Download CSV</button>
+
+</div>
+
+<div class="report-card">
+<h3>Open Dataset</h3>
+<p>View collected data</p>
+
+<button onclick="openCSV()">Open CSV</button>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© 2026 SmartSoil AI | Engineering Project Demo</p>
+</footer>
+
+<!-- Scripts -->
+<script src="js/navigation.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/analytics.js"></script>
+<!--<script src="js/automation.js"></script> -->
+<script src="js/reports.js"></script>
+
+</body>
+</html>

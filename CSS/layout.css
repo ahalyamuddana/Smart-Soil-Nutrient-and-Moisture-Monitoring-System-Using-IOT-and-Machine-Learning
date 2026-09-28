@@ -1,0 +1,92 @@
+/* ================= HEADER ================= */
+.header {
+  background: #1b5e20;
+  color: white;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  /* Prevent overflow */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 42px;
+}
+
+.logo h1 {
+  font-size: 18px;
+}
+
+.logo p {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.nav button {
+  margin-left: 18px;
+  color: white;
+  font-size: 15px;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.nav button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ================= MAIN ================= */
+main {
+  min-height: calc(100vh - 120px);
+
+  /* Prevent page from expanding horizontally */
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 18px;
+  font-size: 14px;
+
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ================= GLOBAL FIX ================= */
+
+/* Prevent horizontal scroll */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure all elements stay inside viewport */
+* {
+  box-sizing: border-box;
+}
+
+/* Responsive images and charts */
+img, canvas {
+  max-width: 100%;
+  height: auto;
+}

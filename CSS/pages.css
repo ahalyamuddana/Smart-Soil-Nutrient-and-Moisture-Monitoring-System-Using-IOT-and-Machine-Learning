@@ -1,0 +1,57 @@
+.page-title {
+  font-size: 30px;
+  padding: 30px 40px;
+  font-weight: bold;
+
+  /* Prevent overflow */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media(max-width: 768px) {
+
+  .hero-overlay h2 {
+    font-size: 32px;
+  }
+
+  .hero-overlay p {
+    font-size: 16px;
+  }
+
+  .features {
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .metric-grid,
+  .analytics-grid,
+  .report-grid {
+    padding: 20px;
+
+    /* Prevent horizontal scrolling */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav button {
+    font-size: 13px;
+  }
+
+}
+
+/* ================= GLOBAL FIX ================= */
+
+/* Ensure elements stay within viewport */
+* {
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
